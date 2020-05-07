@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.github.KaptainWutax:LattiCG:21fe9b612a1b97ddd6657782d12fadcdfcb2044f'
+    implementation 'com.github.KaptainWutax:SeedUtils:51492e84c9524c2abef256bce4361d2029a0e85a'
+}
