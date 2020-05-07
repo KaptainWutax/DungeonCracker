@@ -8,9 +8,9 @@ import javafx.scene.text.Font;
 
 public class SpawnerCoords {
 
-	private int x;
-	private int y;
-	private int z;
+	public int x;
+	public int y;
+	public int z;
 
 	private Label[] labels = new Label[3];
 	private TextField[] textFields = new TextField[3];

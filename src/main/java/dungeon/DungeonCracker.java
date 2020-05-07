@@ -29,6 +29,10 @@ public class DungeonCracker extends Application {
 
 		stage.setScene(scene);
 		stage.show();
+
+		stage.setOnCloseRequest(event -> {
+			Bruteforce.instance.close();
+		});
 	}
 
 }

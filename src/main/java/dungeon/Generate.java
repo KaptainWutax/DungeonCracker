@@ -30,6 +30,13 @@ public class Generate {
 		this.findSeedsButton.setTranslateX(320.0D);
 		this.findSeedsButton.setTranslateY(150.0D);
 		this.findSeedsButton.setDisable(true);
+
+		this.findSeedsButton.setOnMouseClicked(event -> {
+			if(!Bruteforce.instance.isShowing()) {
+				Bruteforce.instance.show();
+				Bruteforce.instance.init();
+			}
+		});
 	}
 
 	private void updateVersion() {
