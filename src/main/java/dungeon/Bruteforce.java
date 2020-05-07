@@ -93,17 +93,19 @@ public class Bruteforce extends Stage {
 			}
 		}
 
-		//TODO: Multi-thread this.
-		Platform.runLater(() -> {
-			outputLog.setText("Looking for dungeon seeds...");
+		//TODO: Multi-thread this properly...
+		new Thread(() -> {
+			Platform.runLater(() -> outputLog.setText("Looking for dungeon seeds..."));
 
 			device.streamSeeds().forEach(seed -> {
-				String t = outputLog.getText();
-				outputLog.setText(t + "\n" + "Found dungeon seed " + seed + ".");
+				Platform.runLater(() -> {
+					String t = outputLog.getText();
+					outputLog.setText(t + "\n" + "Found dungeon seed " + seed + ".");
+				});
 			});
 
-			outputLog.setText(outputLog.getText() + "\n" + "Finished looking for dungeon seeds.");
-		});
+			Platform.runLater(() -> outputLog.setText(outputLog.getText() + "\n" + "Finished looking for dungeon seeds."));
+		}).start();
 	}
 
 }
